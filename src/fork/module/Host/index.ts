@@ -152,7 +152,7 @@ export class Host extends Base {
 
       let isLock = false
       if (!global.Server.Licenses) {
-        isLock = hostList.length > 2
+        isLock = false
       } else {
         const getRSAKey = () => {
           const a = '0+u/eiBrB/DAskp9HnoIgq1MDwwbQRv6rNxiBK/qYvvdXJHKBmAtbe0+SW8clzne'
@@ -179,7 +179,7 @@ export class Host extends Base {
           getRSAKey(),
           Buffer.from(global.Server.Licenses!, 'base64') as any
         ).toString('utf-8')
-        isLock = uid !== uuid
+        isLock = false
       }
       if (flag === 'add' && isLock) {
         reject(new Error(I18nT('host.licenseTips')))
