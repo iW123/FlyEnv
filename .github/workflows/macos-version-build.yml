@@ -69,4 +69,3 @@ jobs:
           name: FlyEnv-macOS-${{ matrix.arch }}
           path: |
             release/*.dmg
-            release/*.zip
