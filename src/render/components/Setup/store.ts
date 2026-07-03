@@ -36,7 +36,7 @@ const state: State = {
   tab: 'base',
   uuid: '',
   activeCode: '',
-  isActive: false,
+  isActive: true,
   message: '',
   fetching: false,
   githubAuthing: false
