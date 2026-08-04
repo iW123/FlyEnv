@@ -36,7 +36,7 @@ const state: State = {
   tab: 'base',
   uuid: '',
   activeCode: '',
-  isActive: false,
+  isActive: true,
   message: '',
   fetching: false,
   githubAuthing: false
@@ -79,7 +79,7 @@ export const SetupStore = defineStore('setup', {
               store.saveConfig().then().catch()
             } else {
               this.uuid = data.uuid
-              this.isActive = data.isActive
+              this.isActive = true
               this.activeCode = data.activeCode
             }
 
@@ -257,7 +257,7 @@ export const SetupStore = defineStore('setup', {
               const store = AppStore()
               store.config.setup.license = ''
               store.saveConfig().then().catch()
-              this.isActive = false
+              this.isActive = true
               window.Server.UserUUID = ''
             }
           } else if (res?.code === 1) {
