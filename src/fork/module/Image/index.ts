@@ -154,7 +154,7 @@ class Image extends Base {
     return new ForkPromise(async (resolve, reject, on) => {
       let isLock = false
       if (!global.Server.Licenses) {
-        isLock = true
+        isLock = false
       } else {
         const getRSAKey = () => {
           const a = '0+u/eiBrB/DAskp9HnoIgq1MDwwbQRv6rNxiBK/qYvvdXJHKBmAtbe0+SW8clzne'
@@ -181,7 +181,7 @@ class Image extends Base {
           getRSAKey(),
           Buffer.from(global.Server.Licenses!, 'base64') as any
         ).toString('utf-8')
-        isLock = uid !== uuid
+        isLock = false
       }
       const currentTime = Math.round(new Date().getTime() / 1000)
       if (isLock && (!t || t + 3 * 24 * 60 * 60 < currentTime)) {
