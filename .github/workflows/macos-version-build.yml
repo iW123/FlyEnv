@@ -1,4 +1,4 @@
-name: Build FlyEnv macOS Packages (No Sign)
+name: Build FlyEnv macOS Packages
 on:
   push:
     paths:
