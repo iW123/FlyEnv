@@ -146,7 +146,7 @@ class App extends Base {
         requestSuccess: false,
         uuid,
         activeCode: '',
-        isActive: false
+        isActive: true
       }
 
       this.licensesState()
@@ -180,7 +180,7 @@ class App extends Base {
       const obj = {
         uuid,
         activeCode: '',
-        isActive: false
+        isActive: true
       }
       axios({
         url: 'https://api.one-env.com/api/app/active_code_info',
