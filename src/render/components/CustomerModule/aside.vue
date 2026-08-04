@@ -52,7 +52,7 @@
   })
 
   const isActive = computed(() => {
-    return appStore.currentPage === `/${props.item.id}`
+    return true
   })
 
   const serviceRunning = computed(() => {
