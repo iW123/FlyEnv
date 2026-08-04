@@ -166,7 +166,7 @@ class App extends Base {
               this.getRSAKey(),
               Buffer.from(license, 'base64') as any
             ).toString('utf-8')
-            data.isActive = uid === uuid
+            data.isActive = true
             data.activeCode = data.isActive ? license : ''
           }
           resolve(data)
@@ -199,7 +199,7 @@ class App extends Base {
               this.getRSAKey(),
               Buffer.from(obj.activeCode, 'base64') as any
             ).toString('utf-8')
-            obj.isActive = uid === uuid
+            obj.isActive = true
 
             on({
               'APP-Licenses-Code': obj.isActive ? obj.activeCode : ''
